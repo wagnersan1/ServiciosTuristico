@@ -1,5 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
 carousel-inner{
     width: 300;
     height: 200;
 
 }
+/* Templete CSS*/
+:root{
+    --primary: #1785b8;
+    --secondary: #0400fe;
+    --light: #F5F5F5;
+    --dark: #14141F;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+    font-weight: 700 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+/*** Button ***/
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 0px;
+}
+
+
+/*** Navbar ***/
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    margin-right: 25px;
+    padding: 35px 0;
+    color: #FFFFFF !important;
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 20px 0;
+    color: var(--dark) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
+
+.navbar-light .navbar-brand img {
+    max-height: 60px;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-brand img {
+    max-height: 45px;
+}
+
+@media (max-width: 991.98px) {
+    .sticky-top.navbar-light {
+        position: relative;
+        background: #FFFFFF;
+    }
+
+    .navbar-light .navbar-collapse {
+        margin-top: 15px;
+        border-top: 1px solid #DDDDDD;
+    }
+
+    .navbar-light .navbar-nav .nav-link,
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+        color: var(--dark) !important;
+    }
+
+    .navbar-light .navbar-brand img {
+        max-height: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-light {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(256, 256, 256, .1);
+        z-index: 999;
+    }
+    
+    .sticky-top.navbar-light {
+        position: fixed;
+        background: #FFFFFF;
+    }
+
+    .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 2px;
+        bottom: -1px;
+        left: 50%;
+        background: var(--primary);
+        transition: .5s;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover::before,
+    .navbar-light .navbar-nav .nav-link.active::before {
+        width: calc(100% - 2px);
+        left: 1px;
+    }
+
+    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+    }
+}
+
+/*** Hero Header ***/
+.hero-header {
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../img/bg-hero.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, .5);
+}
+
+
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* Cards */
+    .card {
+        width: 300px;
+        height: 460px;
+        margin: 25px;
+        background-color: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+        transition: 0.3s;
+    }
+    
+    /* Card Header*/
+    .card-header {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .card-img {
+        min-width: 100%;
+        width: auto;
+        height: 100%;
+    }
+    
+    /* Card Body */
+    .card-body {
+        height: 170px;
+        padding: 15px;
+        text-align: center;
+        font-family: sans-serif;
+    }
+    
+    .card-local {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+    
+    .card-titulo {
+        font-size: 32px;
+        margin: 15px 0;
+    }
+    
+    .card-texto {
+        font-size: 12px;
+        width: 250px;
+        margin: 0 auto;
+    }
+    
+    /* Card Footer */
+    .card-footer {
+        margin-top: 10px;
+        text-align: center;
+        background-color: #000;
+    }
+    
+    .card-footer a {
+        color: #fff;
+        display: block;
+        padding: 16px;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-weight: 600;
+    }
+    
+    /* Cores Cards */
+    .card-1 .card-footer {
+        background-color: #2740d1;
+    }
+    
+    .card-1 .card-local {
+        color: #2740d1;
+    }
+    
+    .card-2 .card-footer {
+        background-color: #d12761;
+    }
+    
+    .card-2 .card-local {
+        color: #d12761;
+    }
+    
+    .card-3 .card-footer {
+        background-color: #00c702;
+    }
+    
+    .card-3 .card-local {
+        color: #00c702;
+    }
+    
+    /* Animação Hover */
+    .card:hover {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+        
+    /* #cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+        }
+
+        .card p {
+            color: #555;
+        }    
+
+
+    } */
+
+/* Footer */
+
+    footer {
+        display: flex;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+
+
+        p {  
+            margin: 0;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }   
+
+    }
+
+    iframe  {
+        width: 300px;
+        height: 150px;
+        border: 0;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        scroll-snap-stop: always;
+        scroll-padding: 10px;
+    
+    }
